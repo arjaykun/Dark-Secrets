@@ -53,7 +53,7 @@ class PostsController extends Controller
     }
 
     /**
-     * Store a newly created resource in storage.
+     * Store a newly created resoce in storage.
      *
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
@@ -99,9 +99,8 @@ class PostsController extends Controller
 
         $topPosts = Post::all()->sortByDesc('views')->take(10);
 
-        if (auth()->user()->id != $post->user->id) {
-            $post->increment('views');
-        }
+
+        $post->increment('views');
 
         return view('posts.show', compact('post', 'comment', 'tags', 'topPosts'));
     }
