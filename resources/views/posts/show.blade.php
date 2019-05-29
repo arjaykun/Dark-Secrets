@@ -26,7 +26,7 @@
 			@if($post->image)
 		   <img src="{{ asset('storage/' . $post->image) }}" alt="{{ $post->title }}" class="thumbnail" style="width:100%; height: 320px">
 		  @else 
-		   <img src="{{ asset('storage/uploads/noimage.jpeg') }}" alt="{{ $post->title }}" class="thumbnail" style="width:100%; height: 320px">    
+		   <img src="{{ Storage::url('storage/uploads/noimage.jpeg') }}" alt="{{ $post->title }}" class="thumbnail" style="width:100%; height: 320px">    
 		  @endif
 			<p class="pb-4"> {!! $post->body !!} </p>
 
